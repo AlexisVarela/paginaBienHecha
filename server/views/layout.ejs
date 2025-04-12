@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <!-- Iconos de IONIC -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="/styles/layout.css">
+</head>
+<body>
+    <%- include('partials/header')%>
+    <div class="contenedor-principal">
+        <!-- <%- typeof body !== 'undefined' ? body : '' %> -->
+         <%- body%>
+    </div>
+
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('nav-menu');
+    
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('activo');
+        });
+    </script>
+</body>
+</html>
