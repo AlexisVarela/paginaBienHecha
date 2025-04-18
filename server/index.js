@@ -44,6 +44,10 @@ app.get('/', (req, res) => {
 app.get('/login', (req, res) => {
     res.render('login');
 });
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard');
+});
+
 
 // Rutas Mongo Cortes
 const rutasCortes = require('./routes/rutasCortes')
