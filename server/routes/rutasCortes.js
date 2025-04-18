@@ -8,7 +8,7 @@ router.get('/', getCortes);
 router.get('/cortesUser', getCortesUser);
 router.post('/addCorte', addCorte);
 router.post('/editCorte/:id', updateCorte);
-router.post('/deteleCorte/:id', deleteCorte);
+router.post('/deleteCorte/:id', deleteCorte);
 
 // Exportar las rutas
 module.exports = router;

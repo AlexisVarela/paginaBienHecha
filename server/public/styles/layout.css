@@ -3,8 +3,16 @@
     margin: 0;
 }
 
+html, body {
+    width: 100%!important;
+    overflow-x: hidden;
+}
+
 .contenedor-principal{
-    background-color: antiquewhite;
-    width: 100vw;
+    background-color: rgb(203, 177, 142);
+    width: 98%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

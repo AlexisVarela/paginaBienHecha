@@ -1,91 +1,65 @@
-/* header{
-    width: 100%;
-    height: 80px;
-    background-color: rgb(63,63,63);
-    display: flex;
+.nav-header{
+  width: 100%;
+  height: 80px;
+  background-color: #1e1e2f;
+  display: flex;
+  justify-content: space-between;
+  left: 1rem;
 }
 
-div{
-    /* background-color: rgb(171, 210, 244); */ /*
-    display: flex;
-    color: white;
-    gap: 8px;
-    width: 150px;
+.menu-toggle {
+  color: white;
+  /* position: fixed; */
+  /* top: 0.5rem; */
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  width: 250px;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+    /* Menú lateral */
+   .sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
     height: 100%;
-} */
-body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: #f7f7f7;
+    background-color: #1e1e2f;
+    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 9;
+    padding-top: 70px;
   }
-  
-  .nav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #242424;
-    color: white;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  .sidebar ul {
+   list-style: none;
+   padding: 0;
   }
-  
-  .logo {
-    font-weight: bold;
-    font-size: 1.2rem;
+.sidebar ul li {
+   padding: 15px 20px;
   }
-  
-  .menu-toggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-    display: none;
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   }
-  
-  .nav-menu {
-    display: flex;
-    gap: 15px;
+.sidebar.activo {
+    left: 0;
   }
-  
-  .nav-menu a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .nav-menu a:hover {
-    color: #f0c040;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-  
-    .nav-menu {
-      position: absolute;
-      top: 60px;
-      left: 0;
-      right: 0;
-      background-color: #242424;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-  
-    .nav-menu.activo {
-      max-height: 200px;
-    }
-  }
-  
-  .contenedor-principal {
-    padding: 20px;
-  }
-  
+
+.logo{
+  width: 150px;
+  height: 100%;
+  align-self: flex-end;
+}
+
+img{width: 100%; height: 100%; object-fit: contain;}
+
+

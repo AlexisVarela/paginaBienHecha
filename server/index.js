@@ -40,6 +40,11 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+// Rutas login y registro
+app.get('/login', (req, res) => {
+    res.render('login');
+});
+
 // Rutas Mongo Cortes
 const rutasCortes = require('./routes/rutasCortes')
 app.use('/cortes', rutasCortes);
