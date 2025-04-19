@@ -1,6 +1,8 @@
+
 .nav-header{
   width: 100%;
-  height: 80px;
+  /* overflow-x: hidden; */
+  height: 70px;
   background-color: #1e1e2f;
   display: flex;
   justify-content: space-between;
@@ -15,13 +17,14 @@
   border: none;
   font-size: 3rem;
   cursor: pointer;
-  width: 250px;
+  width: 80px;
   height: 100%;
   z-index: 10;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding-left: 1rem;
+  box-shadow: none;
 }
 
     /* Menú lateral */

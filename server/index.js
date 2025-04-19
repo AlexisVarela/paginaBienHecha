@@ -40,13 +40,29 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+
 // Rutas login y registro
-app.get('/login', (req, res) => {
-    res.render('login');
+const sesion = require('express-session');
+const rutasUser = require('./routes/rutasUser');
+app.use(express.urlencoded({extended:true}));
+app.use(sesion({
+    secret: 'Es un secreto que tu mirada y la mia un presentimiento',
+    resave: false,
+    saveUninitialized:false
+}));
+app.use('/user', rutasUser);
+
+app.get('/userComp', (req, res) => {
+    res.render('userComp', {user: req.session.user});
 });
+// app.use((req, res, next) => { // Funciona para acceder al usuario desde cualquier vista
+//     res.locals.user = req.session.user || null;
+//     next();
+//   });
+
 
 // Rutas Mongo Cortes
-const rutasCortes = require('./routes/rutasCortes')
+const rutasCortes = require('./routes/rutasCortes');
 app.use('/cortes', rutasCortes);
 
 

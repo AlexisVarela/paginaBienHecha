@@ -1,0 +1,40 @@
+.form{
+    /* margin-bottom: auto; */
+    height: 350px;
+    width: 300px;
+    background-color: aliceblue;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2px 2px #2b2b2c99;
+    padding: 0.5rem;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: repeat(6, 50px);
+    grid-template-areas:"h2" 
+                        "input1" 
+                        "input2" 
+                        "input3"
+                        "btn"
+                        "irRegistro";
+}
+
+h2{ grid-area: h2; text-align: center; margin-top: 10px;} 
+#username{ grid-area:input1;} 
+#email{ grid-area:input2;} 
+#password{ grid-area:input3 ;}
+.button{ grid-area: btn; ; width: 90%; height: 35px; border-radius: 10px; background-color: #6d6db5; color: white;}
+/* align-self: stretch */
+.irRegistro{grid-area: irRegistro; display: flex; gap: 8px; 
+     justify-content: center; }
+.irRegistro a {text-decoration: none; font-size: 18px; color: black; }
+#username, #email, #password, .button{
+    justify-self: center;
+}
+
+input{
+    padding-left: 0.5rem;
+    width: 80%;
+    height:30px;
+    border-radius: 8px;
+}
