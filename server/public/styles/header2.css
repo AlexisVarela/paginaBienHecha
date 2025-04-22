@@ -1,0 +1,159 @@
+.nav-header{
+    background-color: #2f1e1e;
+    width: 100%;
+    height: 90px;
+    /* padding-top: 10px; */
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 80px 300px 5fr 1fr 150px;
+    grid-template-areas: "openMenu imgen . login user";
+    gap: 2rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 100;
+}
+
+.menu-toggle {
+    position: block;
+    background-color: rgba(255, 255, 255, 0.595);
+    grid-area: openMenu;
+    background: none;
+    border: none;
+    font-size:32px ;
+    cursor: pointer;
+    width: 80px;
+    height: 70px;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    padding-left: 1rem;
+    box-shadow: none;
+}
+
+.sidebar {
+    top: 0;
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #2f1e1e;
+    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 9;
+    padding-top: 70px;
+}
+  /* Menú lateral */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.sidebar ul li {
+    padding: 15px 20px;
+}
+  
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+    
+.sidebar.activo {
+    left: 0;
+}
+
+/* Grid areas del menu sjjs */
+
+.logo{
+    /* background-color: rgba(255, 0, 0, 0.709); */
+    grid-area: imgen;
+    width: 200px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.loginRef{
+    /* background-color: aliceblue; */
+    grid-area: login;
+    align-self: stretch;
+    justify-self:stretch;
+    justify-content: center;
+    align-content: center;
+}
+
+.btnLogin{
+    color: white;
+    width: 100%;
+    height: 50%; 
+    box-shadow: 2px 2px 0px 0px black;
+    border-radius: 1rem; gap: 5px;
+    background-color: rgb(27, 27, 112);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "Icon text";
+}
+.btnLogin p { grid-area: text; color: white;
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+.Icon{ grid-area: Icon;
+    justify-self: center;
+    margin-top: 10px;
+    font-size: 28px;
+}
+
+.btnUser{
+    grid-area: user;
+    background-color: rgba(0, 0, 0, 0);
+    width: 170px;
+    height: 100%;
+    color: white; border: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "icon texto";
+}
+
+.btnUser p{grid-area: texto; justify-self: start; align-self: center; font-size: medium; }
+.icon{grid-area: icon; justify-self: center; align-self: center;}
+
+.btnUser.btnLogin{font-size: 24px;z-index: 11;}
+
+.sliderUser{
+    background-color: #2f1e1edb;
+    position: fixed;
+    /* top: -390px; */
+    top: 90px;
+    right: 1px;
+    width: 150px;
+    height: 180px;
+    display: none;
+    transition: display 0.5s ease;
+    z-index: 9;
+}
+
+.sliderUser ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sliderUser ul li {
+    padding: 15px 20px;
+}
+
+.sliderUser ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sliderUser.deslizar{
+    /* top: 90px; */
+    display: block;
+}

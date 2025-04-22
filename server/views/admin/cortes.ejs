@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/styles/vistaCortes.css">
+<div id="existentes">
+    <div class="modalAgregar">
+        <h2>Añadir corte</h2>
+        <form class="formAgregarCorte" action="/admin/cortes/addCorte" method="POST">
+            <input type="text" name="corte" placeholder="Nombre del corte" required>
+            <input type="number" name="precio" placeholder="Precio" required>
+            <button class="botonAgregar" type="submit">Agregar</button>
+            <button class="btnAgregar2"  onclick="closeCard()">Cerrar</button>
+        </form>
+    </div>
+</div>
+<div class="ContendorFormularioCortes">
+    <div class="listaCortes">
+        <div id="modalCortes">
+            <h2>Lista de Cortes</h2>
+            <button class="btnAgregar2"  onclick="modalCortes()">Agregar Corte</button>
+        </div>
+
+        <ul>    
+        <% cortes.forEach(corte => { %>
+            <li>
+                <%= corte.corte %> - $<%= corte.precio %>
+                <form action="/admin/cortes/editCorte/<%= corte._id %>" method="POST">
+                    <input type="text" name="corte" value="<%= corte.corte %>">
+                    <input type="number" name="precio" value="<%= corte.precio %>">
+                    <button class="actualizar" type="submit">Actualizar</button>
+                </form>
+                <form action="/admin/cortes/deleteCorte/<%= corte._id %>" method="POST">
+                    <button class="eliminar" type="submit">Eliminar</button>
+                </form>
+            </li>
+        <% }); %>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function modalCortes() {
+    document.getElementById('existentes').style.display='flex';
+    console.log('opened the card');
+}
+
+function closeCard() {
+    document.getElementById('existentes').style.display='none';
+    console.log('closed the card');
+}
+</script>

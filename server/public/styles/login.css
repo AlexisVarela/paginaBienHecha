@@ -1,45 +1,43 @@
 .form{
-    height: calc(auto+10px);
-    max-height: calc((100vh - 200px)) ;
-    min-width: 380px;
-    border:  solid black 1px;
+    height: 450px;
+    width: 27%; color: white;
+    background-color: rgba(23, 67, 106, 0.467);
+    margin-top: 2rem;
     border-radius: 1rem;
-    background-color: rgb(227, 232, 237);
-    text-align: center;
-    padding-top: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 1rem;
-    margin-bottom: auto;
+    box-shadow: 2px 2px 2px 2px #2b2b2c99;
+    padding: 0.5rem;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: repeat(6, 50px);
+    grid-template-areas:"h2" 
+                        "input1" 
+                        "input2"
+                        "btn"
+                        "irLogin"
+                        "volver";
 }
 
-.section{
-    margin-top: 8px;
-    height: 120px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* background-color: blueviolet; */
-}
+h2{ grid-area: h2; text-align: center; margin-top: 10px;} 
+#email{ grid-area:input1;} 
+#password{ grid-area:input2;}
+.button{ grid-area: btn; ; width: 90%; height: 45px; border-radius: 10px; background-color: #6d6db5; color: white; align-self: end;}
+/* align-self: stretch */
+.irLogin{grid-area: irLogin; display: flex; gap: 8px; 
+        align-items: center; justify-content: center; }
+.irLogin a {text-decoration: none; font-size: 18px; color: white; }
 
-.title{
-    font-size: 24px;
-    margin-bottom: 0.5rem ;
+.volver{grid-area: volver;display: flex;
+     justify-content: center;}
+.volver a {text-decoration: none; font-size: 18px; color: white; }
+
+#username, #email, #password, .button{
+    justify-self: center;
 }
 
 input{
+    padding-left: 0.5rem;
     width: 80%;
-    height: 30px;
-    border-radius: 1rem;
-}
-
-button{
-    width: 60%;
-    height: 50px;
-    border-radius: 1rem;
-    background-color: bisque;
-    margin-top: auto;
+    height:50px;
+    border-radius: 8px;
 }

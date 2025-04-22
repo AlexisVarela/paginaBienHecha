@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/styles/cardsCortes.css">
+<div class="contendorPirncipal">
+    <h2>Cortes disponibles en el local</h2>
+    <div class="cards">
+        <% cortes.forEach(corte => { %>
+            <div class="card">
+                <div class="imgn">imagen pa</div>
+                <p>Corte: <%= corte.corte %></p>
+                <p>Precio: <%= corte.precio %></p>
+            </div>
+        <% }); %>
+
+    </div>
+</div>

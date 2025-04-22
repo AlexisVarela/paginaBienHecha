@@ -1,0 +1,39 @@
+.contendorPirncipal{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(99, 102, 150);
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    align-items:center ;
+    padding-top: 1rem;
+}
+
+.cards{
+    margin-top: 1rem;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card{
+    background-color: #23236498;
+    width: 280px;
+    height: 300px;
+    text-align: center;
+    gap: 1px;
+    border: 1px solid black;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2px 2px black;
+    padding: 1rem;
+}
+.card p {margin-top: 10px; color: white;}
+
+.imgn{
+    width: 100%;
+    height: 80%;
+    border: 1px solid rgb(51, 49, 49);
+}

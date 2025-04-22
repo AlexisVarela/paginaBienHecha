@@ -1,2 +1,8 @@
 
-<h1>Estas en el home pa</h1>
+
+<% if (user) { %>
+    <h2 style="padding-left: 30px;">Se ha iniciado sesion con el usuario:  <%= user?.username %></h2>
+    <h1>Estas en el home pa</h1>
+  <% } else { %>
+    <h1>Estas en el home pa</h1>
+  <% } %>
