@@ -49,7 +49,7 @@ const loginUser = async (req, res) => {
         role: user.role
       };
   
-      res.redirect('/userComp');
+      res.redirect('/');
     } catch (error) {
       console.error(error);
       res.status(500).send('Error al iniciar sesión');

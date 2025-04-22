@@ -4,17 +4,19 @@ const Corte = require('../models/modelCortes'); // Importar el modelo de los cor
 const getCortes = async (req, res) => {
     try {
         const cortes = await Corte.find();
-        res.render('cortes', { title: 'Lista de Cortes', cortes }); // Aqui lo renderiza a cada vista
+        res.render('admin/cortes', { title: 'Lista de Cortes', cortes }); // Aqui lo renderiza a cada vista
     } catch (err) {
         console.error(err);
         res.status(500).send("Error al obtener los cortes");
     }
 };
 
+// obtener cortes para vistas de usuarios
 const getCortesUser = async (req, res) => {
     try {
         const cortes = await Corte.find();
-        res.render('cortesUser', { title: 'Cortes Cards', cortes }); // Aqui lo renderiza a cada vista
+        // res.sendFile(path.join(__dirname, 'views/publicViews/cortes/cards.ejs'));
+        res.render('publicViews/cardsCortes', { title: 'Cortes Cards', cortes }); // Aqui lo renderiza a cada vista
     } catch (err) {
         console.error(err);
         res.status(500).send("Error al obtener los cortes");
@@ -27,7 +29,7 @@ const addCorte = async (req, res) => {
         const { corte, precio } = req.body;
         const nuevoCorte = new Corte({ corte, precio });
         await nuevoCorte.save();
-        res.redirect('/cortes'); // Redirige a la lista de cortes
+        res.redirect('/admin/cortes'); // Redirige a la lista de cortes
     } catch (err) {
         console.error(err);
         res.status(400).send("Error al agregar el corte");
@@ -40,7 +42,7 @@ const updateCorte = async (req, res) => {
         const { id } = req.params;
         const { corte, precio } = req.body;
         await Corte.findByIdAndUpdate(id, { corte, precio });
-        res.redirect('/cortes');
+        res.redirect('/admin/cortes');
     } catch (err) {
         console.error(err);
         res.status(400).send("Error al actualizar el corte");
@@ -52,7 +54,7 @@ const deleteCorte = async (req, res) => {
     try {
         const { id } = req.params;
         await Corte.findByIdAndDelete(id);
-        res.redirect('/cortes');
+        res.redirect('/admin/cortes');
     } catch (err) {
         console.error(err);
         res.status(500).send("Error al eliminar el corte");

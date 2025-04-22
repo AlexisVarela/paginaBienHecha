@@ -18,6 +18,7 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'views'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public')); // actua para funcionar con lso estaticos de las imagenes
 
 // Procesar datos de los formularios 
 app.use(express.urlencoded({extended: true}));
@@ -25,13 +26,35 @@ app.use(express.json());
 
 const expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
-app.set('layout', 'layout'); // nombre de tu layout.ejs
-
+app.set('layout', 'layout'); 
 
 // ---------Conecciones---------
 // Mongo
 const {conectarMongo} = require('./controller/config/conexionMongo')
 conectarMongo();
+
+// Validación del user si es admin o no
+const sesion = require('express-session');
+const rutasUser = require('./routes/rutasUser'); // Importación de las rutas del usuario
+app.use(express.urlencoded({extended:true}));
+app.use(sesion({
+    secret: 'Es un secreto que tu mirada y la mia un presentimiento',
+    resave: false,
+    saveUninitialized:false
+}));
+
+// Middleware que tiene que ver con la sesión 
+const {esAdmin} = require('./middlewares/authMiddleware'); // verifica si es admin
+const {varUser} = require('./middlewares/authMiddleware'); // es la variable globar para el usuario
+const {haySesion} = require('./middlewares/authMiddleware'); // verifica si hay una sesion iniciada o no
+// Alt + Shift + Arriba/Abajo para duplicar una linea
+
+// -----Importacion de rutas-------
+const rutasCortes = require('./routes/rutasCortes');
+const rutasCortesPublicas = require('./routes/rutasUserCortes');
+
+// ------------Vairbales Globales------------
+app.use(varUser);
 
 // ---------RUTAS---------
 
@@ -39,32 +62,23 @@ conectarMongo();
 app.get('/', (req, res) => {
     res.render('home');
 });
-
-
+   
 // Rutas login y registro
-const sesion = require('express-session');
-const rutasUser = require('./routes/rutasUser');
-app.use(express.urlencoded({extended:true}));
-app.use(sesion({
-    secret: 'Es un secreto que tu mirada y la mia un presentimiento',
-    resave: false,
-    saveUninitialized:false
-}));
-app.use('/user', rutasUser);
+app.use('/publicViews/user', rutasUser);
 
-app.get('/userComp', (req, res) => {
-    res.render('userComp', {user: req.session.user});
+app.get('/userComp', (req, res) => {  
+    // Ruta temporal para la comprobación del usuario
+    res.render('publicViews/userComp');
 });
-// app.use((req, res, next) => { // Funciona para acceder al usuario desde cualquier vista
-//     res.locals.user = req.session.user || null;
-//     next();
-//   });
+
+app.get('/esAdmin', esAdmin, (req,res) => {
+    res.render('/admin/esAdmin');
+});
 
 
 // Rutas Mongo Cortes
-const rutasCortes = require('./routes/rutasCortes');
-app.use('/cortes', rutasCortes);
-
+app.use('/admin/cortes', rutasCortes);
+app.use('/cortes', rutasCortesPublicas);
 
 
 

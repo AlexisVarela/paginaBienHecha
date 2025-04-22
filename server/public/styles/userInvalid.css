@@ -1,0 +1,24 @@
+.principal{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(5, 3, 85, 0.833);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.userInvalid{
+    background-color: rgb(155, 13, 13);
+    width: 350px;
+    height: 200px;
+    border: 0.5px solid black;
+    box-shadow: 2px 2px 2px 2px black;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+p{font-size: 18px;}
+h2{font-size:32px;}
+p, h2 {color: #fff;}

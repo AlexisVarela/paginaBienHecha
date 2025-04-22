@@ -1,26 +1,22 @@
 <link rel="stylesheet" href="/styles/header.css">
-<!-- <header>
-    <div>
-        <ion-icon name="home-outline"></ion-icon>
-        <p>Home</p>
-    </div>
-</header> -->
 <header class="nav-header">
   <button class="menu-toggle" id="menu-toggle">
     <ion-icon name="menu-outline"></ion-icon>
   </button>
-  <!-- Menú lateral -->
+  
   <nav id="nav-menu" class="sidebar">
+    <div class="p">Bienvenido <%= user?.username %></div>
     <ul>
       <li><a href="/"><ion-icon name="home-outline"></ion-icon> Inicio</a></li>
-      <li><a href="/cortes"><ion-icon name="people-outline"></ion-icon> Cortes</a></li>
-      <li><a href="/user/login"><ion-icon name="log-in-outline"></ion-icon> Login</a></li>
-      <li><a href="/user/register"><ion-icon name="settings-outline"></ion-icon>Registrarse</a></li>
-      <li><a href="/user/logout"><ion-icon name="log-out-outline"></ion-icon>Salir</a></li>
+      <li><a href="/admin/cortes"><ion-icon name="people-outline"></ion-icon> Cortes</a></li>
+      <li><a href="/publicViews/user/login"><ion-icon name="log-in-outline"></ion-icon> Login</a></li>
+      <li><a href="/publicViews/user/register"><ion-icon name="settings-outline"></ion-icon>Registrarse</a></li>
+      <li><a href="/publicViews/user/logout"><ion-icon name="log-out-outline"></ion-icon>Salir</a></li>
+      <li><a href="/cortes/cards"><ion-icon name="log-out-outline"></ion-icon>CortesUser</a></li>
+      
     </ul>
   </nav>
 
-  <!-- loguito -->
-  <div class="logo"><img src="../img/logo.png" alt=""></div>
+  <div class="logo"><img src="/img/logo.png" alt=""></div>
 </header>
 
