@@ -1,0 +1,118 @@
+.principalHome{
+    background-color: rgb(70, 74, 111);
+    width: 100%;
+    height: 100vh; color: aliceblue;
+    padding-top: 2rem;
+}
+
+.username{
+    display: flex;
+    padding-left: 2rem;
+}
+
+.spectacular{
+    /* background-color: azure; */
+    width: 100%;
+    height: 500px;
+    /* margin */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "loDemas img";
+                         /* "loDemas ."; */
+    gap: 2rem;
+    /* padding: 10px; */
+    /* justify-items: center; */
+    margin-top: 2rem;
+    background-color: rgba(0, 0, 0, 0.315);
+}
+.loDemas{
+    /* background-color: rgba(250, 6, 6, 0.315); */
+    grid-area: loDemas;
+    width: 75%;
+    height: 65%;
+    /* border-radius: 1rem; */
+    /* border: 1px solid black; */
+    margin-left:1rem ;
+    justify-self: end;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 2fr 2fr;
+    grid-template-areas: "title title"
+                         "h4 h4"
+                         "p p"
+                         "btnR btnI";
+}
+
+.loDemas h3{ 
+    grid-area: title;
+    font-size: 35px;
+    /* color: rgb(0, 140, 255); */
+    color: rgb(50, 98, 219);
+    justify-self:center;
+    align-self:center;
+}
+.loDemas h4{
+    grid-area: h4;
+    font-size: 22px;
+    justify-self:center;
+    align-self:center;
+}
+.loDemas p{
+    grid-area: p ;
+    font-size: 18px;
+    justify-self:center;
+    align-self:center;
+    width: 80%;
+}
+
+.loDemas .register{
+    width: 150px;
+    height: 40px;
+    grid-area:btnR;
+    /* background-color: blueviolet; */
+    border: 1.5px solid blueviolet;
+    color: aliceblue;
+    border-radius: 1rem;
+    justify-self:center;
+    align-self:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+.loDemas .login{
+    width: 150px;
+    height: 40px;
+    grid-area:btnI;
+    background-color: blueviolet;
+    color: aliceblue;
+    border-radius: 1rem;
+    justify-self:center;
+    align-self:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.img{
+    grid-area: img;
+    width: 90%;
+    /* background-color: rgba(23, 53, 174, 0.315); */
+    /* background-color: aqua; */
+    /* justify-self: stretch; */
+    justify-self: start;
+    align-self: center;
+}
+.img img{
+    width: 98%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.cuadrado{border: 1px solid orange; width: 300px; height: 300px;}
+
