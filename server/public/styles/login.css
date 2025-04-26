@@ -1,7 +1,8 @@
 .form{
     height: 450px;
-    width: 27%; color: white;
-    background-color: rgba(23, 67, 106, 0.467);
+    width: 27%; 
+    color: white;
+    background-color: rgb(96, 3, 247);
     margin-top: 2rem;
     border-radius: 1rem;
     box-shadow: 2px 2px 2px 2px #2b2b2c99;
@@ -9,31 +10,58 @@
     gap: 1rem;
     display: grid;
     grid-template-columns: 1fr ;
-    grid-template-rows: repeat(6, 50px);
+    grid-template-rows: repeat(5, 60px);
     grid-template-areas:"h2" 
                         "input1" 
                         "input2"
                         "btn"
-                        "irLogin"
-                        "volver";
+                        "irLogin";
 }
 
-h2{ grid-area: h2; text-align: center; margin-top: 10px;} 
+h2{ 
+    grid-area: h2;
+    text-align: center;
+    margin-top: 10px;
+}
+
 #email{ grid-area:input1;} 
 #password{ grid-area:input2;}
-.button{ grid-area: btn; ; width: 90%; height: 45px; border-radius: 10px; background-color: #6d6db5; color: white; align-self: end;}
-/* align-self: stretch */
-.irLogin{grid-area: irLogin; display: flex; gap: 8px; 
-        align-items: center; justify-content: center; }
-.irLogin a {text-decoration: none; font-size: 18px; color: white; }
 
-.volver{grid-area: volver;display: flex;
-     justify-content: center;}
-.volver a {text-decoration: none; font-size: 18px; color: white; }
+.button{ 
+    grid-area: btn;
+    width: 80%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #240aa5c8;
+    color: white; 
+    align-self: end;
+    transition: .3s ease-in;
+}
 
-#username, #email, #password, .button{
+.button:hover{
+    padding: 5px;
+    background-color: #180382c8;
+    transition: .3s ease;
+}
+
+.irLogin{
+    margin-top: 5px;
+    grid-area: irLogin;
+    justify-self: center;
+    text-align: center;
+}
+
+.irLogin a {
+    text-decoration: none;
+    font-size: 18px; color:
+    white;
+    line-height: 1.8;
+}
+
+#email, #password, .button{
     justify-self: center;
 }
+
 
 input{
     padding-left: 0.5rem;

@@ -11,6 +11,8 @@
     overflow-x: hidden;
     overflow-y: hidden;
     z-index: 100;
+    position: sticky;
+    top: 0;
 }
 
 .menu-toggle {
@@ -77,34 +79,33 @@
 }
 
 .loginRef{
-    /* background-color: aliceblue; */
+    background-color: rgb(27, 133, 226);
     grid-area: login;
-    align-self: stretch;
-    justify-self:stretch;
-    justify-content: center;
-    align-content: center;
-}
-
-.btnLogin{
-    color: white;
-    width: 100%;
-    height: 50%; 
-    box-shadow: 2px 2px 0px 0px black;
-    border-radius: 1rem; gap: 5px;
-    background-color: rgb(27, 27, 112);
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "Icon text";
-}
-.btnLogin p { grid-area: text; color: white;
-    margin-top: 10px;
-    font-size: 22px;
-}
-
-.Icon{ grid-area: Icon;
+    align-self: center;
     justify-self: center;
-    margin-top: 10px;
-    font-size: 28px;
+    width: 120px;
+    height: 40px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1rem;
+    transition: .3s ease;
+}
+
+.loginRef p{ font-size: 20px;}
+
+.loginRef:hover{
+    background-color: none;
+    background-image: linear-gradient(
+        150deg,
+        blueviolet,
+        #09f,
+        rgb(1, 255, 132)
+    );
+    padding: 3px;
+    transition: .3s ease;
 }
 
 .btnUser{
@@ -113,18 +114,16 @@
     width: 170px;
     height: 100%;
     color: white; border: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "icon texto";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
-
-.btnUser p{grid-area: texto; justify-self: start; align-self: center; font-size: medium; }
-.icon{grid-area: icon; justify-self: center; align-self: center;}
 
 .btnUser.btnLogin{font-size: 24px;z-index: 11;}
 
 .sliderUser{
-    background-color: #2f1e1edb;
+    background-color: #1e1e2f9d;
     position: fixed;
     /* top: -390px; */
     top: 90px;

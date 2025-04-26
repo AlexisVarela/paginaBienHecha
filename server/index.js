@@ -10,6 +10,7 @@ dotenv.config();
 
 // Asignación de puerto
 const PORT = process.env.PORT;
+const secret_Session = process.env.secret_Session;
 
 // Permisos para realizar peticiones put y delete
 app.use(methodOverride('_method'));
@@ -38,7 +39,7 @@ const sesion = require('express-session');
 const rutasUser = require('./routes/rutasUser'); // Importación de las rutas del usuario
 app.use(express.urlencoded({extended:true}));
 app.use(sesion({
-    secret: 'Es un secreto que tu mirada y la mia un presentimiento',
+    secret: secret_Session,
     resave: false,
     saveUninitialized:false
 }));
@@ -52,6 +53,7 @@ const {haySesion} = require('./middlewares/authMiddleware'); // verifica si hay 
 // -----Importacion de rutas-------
 const rutasCortes = require('./routes/rutasCortes');
 const rutasCortesPublicas = require('./routes/rutasUserCortes');
+const rutasAdmin2 = require('./routes/rutasAdminCortes2');
 
 // ------------Vairbales Globales------------
 app.use(varUser);
@@ -80,7 +82,8 @@ app.get('/esAdmin', esAdmin, (req,res) => {
 app.use('/admin/cortes', rutasCortes);
 app.use('/cortes', rutasCortesPublicas);
 
-
+// CortesNueva
+app.use('/admin/cortes20', rutasAdmin2);
 
 // definir el puerto
 app.listen(PORT, () =>{

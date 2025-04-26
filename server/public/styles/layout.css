@@ -1,8 +1,12 @@
+:root {
+    --altura-modal: calc(100vh - 90px); 
+}
+
 *{
     padding: 0;
     margin: 0;
 }
-
+ /* Este funciona para cuando quieres que el scroll no se vea */
 /* html, body {
     width: 100%!important;
     overflow-x: hidden;
@@ -11,7 +15,7 @@
 .contenedor-principal{
     background-color: rgb(70, 74, 111);
     width: 100%;
-    height: 100vh;
+    height: var(--altura-modal);
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -20,3 +24,5 @@
 ion-icon{
     font-size: 32px;
 }
+
+
