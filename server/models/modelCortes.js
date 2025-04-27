@@ -8,6 +8,9 @@ const corteSchema = new mongoose.Schema({
     precio: {
         type: Number,
         required: [true, 'No has agregado ningun precio para el corte']
+    },
+    imagen: {
+        type: String
     }
 });
 

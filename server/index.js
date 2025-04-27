@@ -51,7 +51,7 @@ const {haySesion} = require('./middlewares/authMiddleware'); // verifica si hay 
 // Alt + Shift + Arriba/Abajo para duplicar una linea
 
 // -----Importacion de rutas-------
-const rutasCortes = require('./routes/rutasCortes');
+// const rutasCortes = require('./routes/rutasCortes');
 const rutasCortesPublicas = require('./routes/rutasUserCortes');
 const rutasAdmin2 = require('./routes/rutasAdminCortes2');
 
@@ -79,7 +79,7 @@ app.get('/esAdmin', esAdmin, (req,res) => {
 
 
 // Rutas Mongo Cortes
-app.use('/admin/cortes', rutasCortes);
+// app.use('/admin/cortes', rutasCortes);
 app.use('/cortes', rutasCortesPublicas);
 
 // CortesNueva

@@ -1,50 +1,59 @@
 <link rel="stylesheet" href="/styles/cortesAdmin.css">
 <div class="nuevaLista">
-    <div class="modal-general" id="modal-agregar">
-        <div class="form-general modal-agregar" >
-            <h2>Añadir corte</h2>
-            <form class="formAgregarCorte" action="/admin/cortes20/addCorte20" method="POST">
-                <input type="text" name="corte" class="input" placeholder="Nombre del corte" required>
-                <input type="number" name="precio" class="input2" placeholder="Precio" required>
-                <button class="btnSmt" type="submit">Agregar</button>
-                <button class="cerrar"  onclick="closeCard()">Cerrar</button>
-            </form>
-        </div>
-    </div>
     <div class="lista">
-            <h2 class="title">Lista de cortes disponibles</h2>
-            <button class="btn-abrir-M_AG"  onclick="modalCortes()">Agregar Corte</button>
+        <h2 class="title">Lista de cortes disponibles</h2>
+        <button class="btn-abrir-M_AG"  onclick="modalCortes()">Agregar Corte</button>
         <ul>
             <% cortes.forEach( corte => {%>
-            <li>
-                <div class="corte-precio">
+                <li>
+                    <div class="corte-precio">
+                        
+                        <p><%=corte.corte%></p>
+                        <p>$<%=corte.precio%></p>
+                    </div>
                     
-                    <p><%=corte.corte%></p>
-                    <p>$<%=corte.precio%></p>
-                </div>
-                
-                <button type="button"
+                    <button type="button"
                     class="btn-abrir-M_A"
                     data-id="<%=corte._id%>"
                     data-corte="<%=corte.corte%>"
                     data-precio="<%=corte.precio%>"
-                >Actualizar</button>
-                <button type="button"
+                    >Actualizar</button>
+                    <button type="button"
                     class="btn-abrir-M_E"
                     data-id="<%=corte._id%>"
                     data-corte="<%=corte.corte%>"
-                >Eliminar</button>
-            </li>
-            <% });%>
-        </ul>
-    </div>
+                    >Eliminar</button>
+                </li>
+                <% });%>
+            </ul>
+        </div>
+        
+        <div class="modal-general" id="modal-agregar">
+            <div class="form-general modal-agregar" >
+                <h2>Añadir corte</h2>
+                <form class="formAgregarCorte" action="/admin/cortes20/addCorte20" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="corte" class="input" placeholder="Nombre del corte" required>
+                    <input type="number" name="precio" class="input2" placeholder="Precio" required>
+                    <div class="input3">
+                        <p>Agregar imagen</p>
+                        <input type="file" name="imagen" accept="image/*">
+                    </div>
+                    <button class="btnSmt" type="submit">Agregar</button>
+                    <button class="cerrar"  onclick="closeCard()">Cerrar</button>
+                </form>
+            </div>
+        </div>
 
-    <div class="modal-general" id="modal-update">
-        <div class="form-general modal-update">
+        <div class="modal-general" id="modal-update">
+            <div class="form-general modal-update">
             <h2>Actualizar Corte</h2>
-            <form id="update-form" method="POST">
+            <form id="update-form" method="POST" enctype="multipart/form-data">
                 <input type="text" name="corte" id="input-corte" class="input" placeholder="Nombre del corte">
                 <input type="number" name="precio" id="input-precio" class="input2" placeholder="Precio del corte">
+                <div class="input3">
+                    <p>Actualizar imagen</p>
+                    <input type="file" name="imagen" accept="image/*">
+                </div>
                 <button class="btnSmt" type="summit">Actualizar</button>
                 <button class="cerrar" type="button" onclick="closeUpdateNew()">Cancelar</button>
             </form>

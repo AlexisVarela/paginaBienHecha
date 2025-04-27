@@ -42,10 +42,22 @@
     width: 40%;
     height: 50%;
     border-radius: 1rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     box-shadow: 0px 0px 2px 2px white;
-    padding: 5px;
+    /* padding: 5px; */
+    padding-bottom: 1rem;
+    position: relative;
 }
+
+/* .form-general::before{
+    content: "";
+    background-color: #a25c07;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform:  scale(1);
+    filter: blur(20px);
+} */
 
 .btn-abrir-M_AG{
     grid-area: agregar;
@@ -186,11 +198,41 @@
     grid-area: form;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     grid-template-areas: "input"
                          "input2"
+                         "input3"
                          "btn"
                          "btnClose";
+}
+
+/*Sombra de cada uno de los modales update y agregar*/
+.modal-agregar::before{
+    content: "";
+    background-image: linear-gradient(
+        120deg,
+        rgb(25, 92, 143),
+        rgb(11, 149, 110)
+    ) ;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform:  scale(1);
+    filter: blur(20px);
+}
+
+.modal-update::before{
+    content: "";
+    background-image: linear-gradient(
+        120deg,
+        rgb(26, 135, 219),
+        rgb(52, 11, 149)
+    );
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform:  scale(1);
+    filter: blur(20px);
 }
 
 .modal-agregar input, .modal-update input{
@@ -210,6 +252,23 @@ form .input2{
     grid-area: input2;
 }
 
+form .input3{
+    grid-area: input3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    color: white;
+}
+
+form .input3 input{
+    width: 310px;
+    height: 20px;
+    border-radius: 0px;
+    padding-left: 0px;
+
+}
+
 form .btnSmt{
     grid-area: btn;
     width: 230px;
@@ -223,12 +282,21 @@ form .cerrar{
 
 /*modal delete*/
 .modal-delete {
-    border: 3px solid red;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
     grid-template-areas: "title"
                          "form";
+}
+
+.modal-delete::before{
+    content: "";
+    background-color: #a21e07;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform:  scale(1);
+    filter: blur(20px);
 }
 
 .modal-delete form >*, .modal-delete >*{

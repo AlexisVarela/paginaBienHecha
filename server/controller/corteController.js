@@ -41,7 +41,7 @@ const updateCorte = async (req, res) => {
     try {
         const { id } = req.params;
         const { corte, precio } = req.body;
-        await Corte.findByIdAndUpdate(id, { corte, precio });
+        await Corte.findByIdAndUpdate(id, { corte, precio, imagen });
         res.redirect('/admin/cortes');
     } catch (err) {
         console.error(err);
@@ -79,7 +79,9 @@ const getCortes20 = async (req, res) => {
 const addCorte20 = async (req, res) => {
     try {
         const { corte, precio } = req.body;
-        const nuevoCorte = new Corte({ corte, precio });
+        const imagen = req.file ? req.file.filename : null;
+        
+        const nuevoCorte = new Corte({ corte, precio, imagen });
         await nuevoCorte.save();
         res.redirect('/admin/cortes20'); // Redirige a la lista de cortes
     } catch (err) {
@@ -93,7 +95,13 @@ const updateCorte20 = async (req, res) => {
     try {
         const { id } = req.params;
         const { corte, precio } = req.body;
-        await Corte.findByIdAndUpdate(id, { corte, precio });
+        let updateDate = {corte, precio};
+
+        if (req.file) {
+            updateDate.imagen = req.file.filename;
+        }
+        
+        await Corte.findByIdAndUpdate(id, updateDate);
         res.redirect('/admin/cortes20');
     } catch (err) {
         console.error(err);

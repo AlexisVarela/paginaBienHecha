@@ -4,7 +4,7 @@
     <div class="cards">
         <% cortes.forEach(corte => { %>
             <div class="card">
-                <div class="imgn">imagen pa</div>
+                <div class="imgn"><img src="/img/cortes/<%= corte.imagen %>" alt="imagen del corte <%= corte.corte%>"></div>
                 <p>Corte: <%= corte.corte %></p>
                 <p>Precio: <%= corte.precio %></p>
             </div>
