@@ -18,7 +18,41 @@
       <a href="/publicViews/user/register" class="register">Register</a>
       <a href="/publicViews/user/login" class="login">Login</a>
     </div>
-    <div class="img"><img src="/img/empresa.jpg" alt="imagenEmpresa"></div>
+    <div class="img">
+      <img src="/img/empresa.jpg" alt="imagenEmpresa" id="empresa">
+    </div>
   </div>
+</div>
+<div class="principal2">
+  <h2>Ejemplos de cortes disponibles</h2>
+  <div class="firtsCards">
+    <% if (cortes.length > 0) {%>
+      <% cortes.slice(0, 6).forEach((corte, index) => { %>
+        <div class="card" data-id="<%= index %>">
+          <div class="imgn">
+            <img src="/img/cortes/<%=corte.imagen%>" alt="corte <%=corte.corte%>">
+          </div>
+          <p>Corte: <%= corte.corte %></p>
+          <p>Precio: <%= corte.precio %></p>
+        </div>
+      <%});%>
+    <%} else {%>
+      <p class="noCortes">No hay cortes disponibles</p>
+    <% } %>
+  </div>
+</div>
+
+<div class="principalContacto">
+  <aside>
+    <img src="/img/local.jpg" alt="imagen gratis de local" class="img-local">
+  </aside>
+  <nav>
+    <h2>En nuestro local te trataremos bien</h2>
+    <p>
+      Puedes venir en horario entre las 12 pm y 6 pm para contestar tus preguntas
+      ¿Quieres agendar una cita?
+    </p>
+    <a href="#" class="contactanos">Agenda ya.</a>
+  </nav>
 </div>
 

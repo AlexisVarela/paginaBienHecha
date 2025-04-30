@@ -302,7 +302,6 @@ form .cerrar{
 .modal-delete form >*, .modal-delete >*{
     justify-self: center;
     align-self: center;
-
 }
 
 .modal-delete form{
@@ -333,4 +332,70 @@ form .cerrar{
     grid-area: btn;
     width: 230px;
     background-color: rgb(167, 14, 14);
+}
+
+
+/* Media Querys */
+@media (max-width : 1180px) {
+    .lista{
+        width: 95%;
+        height: 600px;
+        margin-bottom: 2rem;
+        
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "title agregar"
+                             "item item";
+    }
+    .form-general{
+        width: 53%;
+        height: 60%;
+    }
+
+}
+
+
+@media (max-width : 711px) {
+    .lista{
+        width: 95%;
+        height: 600px;
+        margin-bottom: 2rem;
+        
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 80px 1fr;
+        grid-template-areas: "title"
+                             "agregar"
+                             "item";
+    }
+    .lista ul li {
+        height: 150px;
+        /* background-color: #a21e07; */
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: "desc desc"
+                             "btn_MA btn_ME";
+    }
+    .corte-precio{
+        grid-area: desc;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .form-general{
+        width: 90%;
+        height: 60%;
+    }
+    
+    .btn-abrir-M_AG, .btn-abrir-M_A, .btn-abrir-M_E, form .cerrar,  .modal-delete form .btnSmt, form .btnSmt{
+        width: 155px;
+    }
+
+    form .input3 {
+        flex-direction: column;
+        
+    }
+
+    .modal-delete form .p {
+        text-align: center;
+        font-size: 20px;
+    }
 }

@@ -67,3 +67,9 @@ input{
     height:50px;
     border-radius: 8px;
 }
+
+@media (max-width : 711px) {
+    .form{
+        width: 85%;
+    }
+}

@@ -54,6 +54,7 @@ const {haySesion} = require('./middlewares/authMiddleware'); // verifica si hay 
 // const rutasCortes = require('./routes/rutasCortes');
 const rutasCortesPublicas = require('./routes/rutasUserCortes');
 const rutasAdmin2 = require('./routes/rutasAdminCortes2');
+const rutasHome = require('./routes/rutasHome');
 
 // ------------Vairbales Globales------------
 app.use(varUser);
@@ -61,9 +62,7 @@ app.use(varUser);
 // ---------RUTAS---------
 
 // Ruta principal
-app.get('/', (req, res) => {
-    res.render('home');
-});
+app.get('/', rutasHome);
    
 // Rutas login y registro
 app.use('/publicViews/user', rutasUser);

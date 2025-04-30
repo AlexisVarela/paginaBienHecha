@@ -6,33 +6,27 @@
 }
 
 .username{
+    width: 100%;
     display: flex;
-    padding-left: 2rem;
+    justify-content: center;
 }
 
 .spectacular{
-    /* background-color: azure; */
     width: 100%;
     height: 500px;
-    /* margin */
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     grid-template-rows: 1fr;
     grid-template-areas: "loDemas img";
                          /* "loDemas ."; */
     gap: 2rem;
-    /* padding: 10px; */
-    /* justify-items: center; */
     margin-top: 2rem;
     background-color: rgba(0, 0, 0, 0.315);
 }
 .loDemas{
-    /* background-color: rgba(250, 6, 6, 0.315); */
     grid-area: loDemas;
     width: 75%;
     height: 65%;
-    /* border-radius: 1rem; */
-    /* border: 1px solid black; */
     margin-left:1rem ;
     justify-self: end;
     align-self: center;
@@ -48,7 +42,6 @@
 .loDemas h3{ 
     grid-area: title;
     font-size: 35px;
-    /* color: rgb(0, 140, 255); */
     color: rgb(50, 98, 219);
     justify-self:center;
     align-self:center;
@@ -73,12 +66,6 @@
     grid-area:btnR;
     border: 1.5px solid blueviolet;
     background-image: none;
-    /* background-image: linear-gradient(
-        150deg,
-        blueviolet,
-        #09f,
-        #00DDFF
-    ); */
     color: aliceblue;
     border-radius: 1rem;
     justify-self:center;
@@ -144,3 +131,280 @@
 
 .cuadrado{border: 1px solid orange; width: 300px; height: 300px;}
 
+/* cartas de cortes disponibles. */
+.principal2{
+    width: 100%;
+    height: 120vh;
+    padding-bottom: 2rem;
+    background-color: rgb(70, 74, 111);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.principal2 h2{
+    font-size: 45px;
+    color: white;
+}
+
+.firtsCards{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 90%;
+    height: 80%;
+    padding-bottom: 1rem;
+    gap: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+}
+
+.card{
+    background-color: rgba(0, 0, 0, 0.315);
+    width: 225px;
+    height: 260px;
+    text-align: center;
+    gap: 1px;
+    border: 1px solid black;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2px 2px black;
+    padding: 1rem;
+    margin-top: 1rem;
+    transition: .3s ease-out;
+}
+
+.card:hover{
+    transition: .3s ease;
+    transform: translateY(-30px) scale(1);
+}
+
+
+.imgn{
+    width: 100%;
+    height: 80%;
+    border: 1px solid rgb(51, 49, 49);
+}
+
+.imgn img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .noCortes {
+    margin-top: 10px;
+    color: rgb(157, 11, 168);
+    font-size: 32px;
+}
+.card p {
+    margin-top: 10px; 
+    color: white;
+}
+
+
+.principalContacto {
+    background-color: #30334C;
+    /* background-color: #4c3035; */
+    color: aliceblue;
+    width: 100%;
+    height: 80vh;
+
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "aside nav";
+                         
+    gap: 0.5rem;
+}
+
+.principalContacto aside{
+    grid-area: aside;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.principalContacto aside img{
+    width: 90%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.principalContacto nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 80px);
+    gap: 1rem;
+    grid-template-areas: "a"
+                         "b"
+                         "c";
+    text-align: center;
+    align-content: center;
+    padding-right: 2rem;
+}
+
+.principalContacto nav h2 {
+    grid-area: a;
+    font-size: 25px;
+    align-self: center;
+}
+
+.principalContacto nav p {
+    grid-area: b;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+.principalContacto nav .contactanos {
+    grid-area: c;
+    padding-top: 10px;
+    text-decoration: none;
+    width: 200px;
+    height: 35px;
+    font-size: 19px;
+    color: white;
+    border-radius: 1rem;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 2px 2px #1e1e2f;
+    justify-self: center;
+    align-self:center;
+    transition: .5s ease-out;
+}
+
+.principalContacto nav .contactanos:hover{
+    margin-top: 5px;
+    border: none;
+    background-image: linear-gradient(
+        150deg,
+        blueviolet,
+        #09f,
+        #00DDFF
+    );
+    padding: 4px;
+    transition: .5s ease;
+}
+
+@media ( max-width : 1180px){
+
+    .loDemas{
+        margin-top: 2rem;
+        justify-self: center;
+        align-self: start;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr 2fr 1fr 1fr;
+        grid-template-areas: "title "
+                             "h4"
+                             "p"
+                             "btnR"
+                             "btnI";
+        gap: 1rem;
+    }
+
+    .loDemas p{
+        justify-self: start;
+    }
+
+    .img{
+        width: 95%;
+        justify-self: center;
+    }
+
+    .principal2{
+        height: 190vh;
+    }
+
+    .firtsCards{        
+        justify-content: space-evenly;
+    }
+
+} 
+
+
+@media (max-width : 711px) {
+
+    .principalHome{
+        height: 135vh;
+    }
+
+    .spectacular{
+        height: 750px;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr 1.5fr;
+        grid-template-areas: "loDemas"
+                             "img";
+    }
+
+    .loDemas{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr 2fr 2fr ;
+        grid-template-areas: "title title"
+                             "h4 h4"
+                             "p p"
+                             "btnR btnI";
+        width: 100%;
+        height: 100%;
+        margin-left:0px;
+        justify-self: stretch;
+        align-self: stretch;
+    }
+
+    
+    .loDemas p{
+        justify-self: center;
+    }
+
+    .img{
+        justify-self: center;
+    }
+
+    .img img{
+        width: 98%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+
+    .principal2{
+        width: 100%;
+        height: 340vh; 
+        justify-content: start;
+    } 
+    
+    .principal2 h2{
+        font-size: 35px;
+        text-align: center;
+    } 
+
+    .principalContacto {
+        background-color: #30334C;
+        color: aliceblue;
+        width: 100%;
+        height: 100vh;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: "1"
+                             "2";
+        gap: 1rem;
+    }
+
+    .principalContacto aside{
+        grid-area: 2;
+    }
+
+    .principalContacto aside img{
+        width: 95%;
+        height: 95%;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+
+    .principalContacto nav {
+        grid-area: 1;
+    }
+}
