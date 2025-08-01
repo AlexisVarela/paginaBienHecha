@@ -101,8 +101,7 @@
     background-image: linear-gradient(
         150deg,
         blueviolet,
-        #09f,
-        rgb(1, 255, 132)
+        #09f
     );
     padding: 3px;
     transition: .3s ease;
@@ -125,17 +124,18 @@
 .sliderUser{
     background-color: #1e1e2f9d;
     position: fixed;
-    /* top: -390px; */
     top: 90px;
     right: 1px;
     width: 150px;
-    height: 180px;
-    display: none;
-    transition: display 0.5s ease;
+    height: 0px;
+    overflow: hidden;
+    /* display: none; */
+    transition: .5s ease-in-out;
     z-index: 9;
 }
 
 .sliderUser ul {
+    overflow: hidden;
     list-style: none;
     padding: 0;
 }
@@ -154,5 +154,6 @@
 
 .sliderUser.deslizar{
     /* top: 90px; */
-    display: block;
+    height: auto;
+    transition: .5s ease-in;
 }

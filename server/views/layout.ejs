@@ -30,6 +30,12 @@
         toggleUser.addEventListener('click', () => {
           menuUser.classList.toggle('deslizar');
           console.log('se hizo clic pa');
+          let height = 0;
+          let lista = menuUser.nextElementSibling;
+          if (lista.clientHeight == '0') {
+            height = lista.scrollHeight;
+          }
+          lista.style.height=`${height}px`;
         });
 
     </script>

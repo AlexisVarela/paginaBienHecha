@@ -1,8 +1,11 @@
 .principalHome{
     background-color: rgb(70, 74, 111);
     width: 100%;
-    height: 100vh; color: aliceblue;
+    height: 80vh; color: aliceblue;
     padding-top: 2rem;
+    display: grid;
+    grid-template-rows: 30px 1fr;
+
 }
 
 .username{
@@ -136,6 +139,7 @@
     width: 100%;
     height: 120vh;
     padding-bottom: 2rem;
+    padding-top: 3rem;
     background-color: rgb(70, 74, 111);
     display: flex;
     justify-content: center;
@@ -243,6 +247,7 @@
                          "c";
     text-align: center;
     align-content: center;
+    justify-items: center;
     padding-right: 2rem;
 }
 
@@ -261,29 +266,51 @@
 
 .principalContacto nav .contactanos {
     grid-area: c;
-    padding-top: 10px;
+    justify-self: center;
+    align-self:center;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 200px;
     height: 35px;
     font-size: 19px;
     color: white;
     border-radius: 1rem;
     border: 1px solid rgb(255, 255, 255);
-    box-shadow: 0px 0px 2px 2px #1e1e2f;
-    justify-self: center;
-    align-self:center;
+    box-shadow: 0px 0px 2px 2px #0a0a6a;
     transition: .5s ease-out;
+    position: relative;
+    overflow: hidden;
 }
 
-.principalContacto nav .contactanos:hover{
-    margin-top: 5px;
-    border: none;
+
+
+.principalContacto nav .contactanos span{
+    z-index: 2;
+}
+.principalContacto nav .contactanos::after{
+    content: "";
+    position: absolute;
     background-image: linear-gradient(
         150deg,
         blueviolet,
         #09f,
         #00DDFF
     );
+    width: 210px;
+    height: 100%;
+    top: -60px;
+    left: -8px;
+    z-index: 1;
+    border-radius: 0px 0px 130px 130px;
+    transition: .5s ease-out;
+}
+
+
+.principalContacto nav .contactanos:hover::after{
+    border: none;
+    top: 0;
     padding: 4px;
     transition: .5s ease;
 }
@@ -314,11 +341,12 @@
     }
 
     .principal2{
-        height: 190vh;
+        height: 150vh;
+        padding-top: 0px;
     }
 
-    .firtsCards{        
-        justify-content: space-evenly;
+    .firtsCards{
+        grid-template-columns: repeat(2, 300px);
     }
 
 } 
@@ -327,7 +355,7 @@
 @media (max-width : 711px) {
 
     .principalHome{
-        height: 135vh;
+        height: 110vh;
     }
 
     .spectacular{
@@ -370,7 +398,7 @@
 
     .principal2{
         width: 100%;
-        height: 340vh; 
+        height: 270vh; 
         justify-content: start;
     } 
     
@@ -378,6 +406,10 @@
         font-size: 35px;
         text-align: center;
     } 
+
+    .firtsCards{
+        grid-template-columns: repeat(auto-fit, 300px);
+    }
 
     .principalContacto {
         background-color: #30334C;
